@@ -1,0 +1,196 @@
+<!-- Descripción: Este archivo HTML contiene la página principal del sitio web.
+    Estructura:
+    - Encabezado (web components)
+    - Contenido principal
+    -Footer (web components) 
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA TERTULIA | Restaurante</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/custom-components.css">
+
+  <script src="./js/index.js" defer></script>
+  <script src="js/custom-components.js" defer></script>
+</head>
+
+<body>
+
+
+
+  <custom-header></custom-header>
+
+  <main class="main">
+    <!-- seccion principal -->
+    <section class="hero">
+      <!-- contenedora principal -->
+      <div class="hero-wrapper">
+
+        <div class="hero-carrousel">
+          <!-- contenedora del carrusel de fondo-->
+          <div class="carrousel-wrapper">
+            <img src="assets/img/inicio.webp" alt="0" class="carrousel-img">
+            <img src="assets/img/bodega.jpg" alt="1" class="carrousel-img">
+            <img src="assets/img/viñedos.jpg" alt="2" class="carrousel-img">
+            <img src="assets/img/copas.jpg" alt="3" class="carrousel-img">
+          </div>
+          <!-- contenedora de la información hero:
+                - un h2 con el svg del logo
+                - un texto
+                - botones de carta y reserva
+                -->
+          <div class="hero-info">
+            <h2 class="hero-h2">
+              <picture>
+                <img src="./assets/SVG/SVG/logo_coral.svg" alt="logo principal" class="logo-principal" width="250"
+                  height="250">
+              </picture>
+            </h2>
+
+            <p class="hero-p">Bienvenidos a <strong>La Tertulia</strong>, un rincón donde la gastronomía moderna se
+              fusiona con la
+              esencia de <strong>Castilla La Mancha</strong>. Entre viñedos infinitos y con el atardecer más
+              espectacular de fondo, te
+              invitamos a disfrutar de una experiencia única. Un espacio para desconectar, compartir y
+              disfrutar. ¿Brindamos?</p>
+            <div class="hero-botones">
+              <a href="./reserva.html" class="hero-order">Reservar</a>
+              <a href="./carta.html" class="hero-order">Carta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- fin del hero -->
+    </section>
+    <!-- sección de información, en ella se encuentran:
+          - un wrapper que contiene todo el contenido
+          - tres articulos con informacion -->
+    <section class="information">
+      <div class="information-wrapper">
+        <!-- cada articulo esta compuesto de:
+              - un div que contiene toda la información 
+              - una imagen 
+            -->
+        <article class="information-article">
+          <!-- parte de la información -->
+          <div class="information-info">
+            <!-- La informacion contiene un position sticky de ahi que se recoga en otro div -->
+            <div class="information-position">
+              <h3 class="information-h3">Nuestro Origen</h3>
+              <p class="information-p">Hemos seleccionado los mejores productos del país, trabajando mano a mano con
+                proveedores nacionales y locales para ofrecer una cocina de temporada, fresca y
+                con los más altos estándares de calidad. Apostamos por los sabores auténticos, por el producto bien
+                tratado y por una gastronomía sostenible.
+                En La Tertulia cocinamos con respeto, sin artificios, dejando que cada ingrediente hable por sí solo.
+                Hemos nacido para el disfrute, para que cada bocado te seduzca. Solo buscamos
+                que vivas una <em>experiencia gastronómica</em> de alto nivel, sin perder de vista la esencia del buen
+                comer, las sobremesas que se alargan y las copas que brindan por lo que está por venir.
+              </p>
+            </div>
+          </div>
+
+          <!-- parte de la imagen -->
+          <picture class="information-picture">
+            <source srcset="./assets/img/origen_.webp" type="image/webp">
+            <img src="./assets/img/origen.jpg" alt="imagen-origen" class="information-imagen" width="387" height="688" loading="lazy">
+          </picture>
+
+        </article>
+
+        <article class="information-article information-article--reverse">
+          <div class="information-info">
+            <div class="information-position information-position--reverse">
+              <h3 class="information-h3">Nuestra Cocina</h3>
+              <p class="information-p">Cuando nació este sueño, no solo pensamos en quienes disfrutan de
+                la buena mesa. La Tertulia es también un espacio de <mark>creatividad</mark>, aprendizaje y evolución
+                constante. Nuestra cocina es un homenaje al producto, al oficio y a la pasión que une a
+                quienes viven para cocinar.
+                Por nuestros fogones han pasado y pasarán talentos que comparten nuestra filosofía:
+                respeto por la tradición, amor por la innovación y la búsqueda incansable del sabor perfecto.
+                Porque la magia de La Tertulia nace en nuestros fogones.
+              </p>
+            </div>
+          </div>
+
+          <picture class="information-picture information-picture--reverse">
+            <source srcset="./assets/img/cocina_.webp" type="image/webp">
+            <img src="./assets/img/cocina.jpg" alt="imagen-cocina" class="information-imagen" width="387" height="688" loading="lazy">
+          </picture>
+
+        </article>
+
+        <article class="information-article">
+          <div class="information-info">
+            <div class="information-position">
+              <h3 class="information-h3">Nuestras Vistas</h3>
+              <p class="information-p">Ubicado en lo alto del monte de <strong>Quintanar de la Orden</strong>, La
+                Tertulia
+                ofrece una panorámica privilegiada: un mar de viñedos que se funde con el horizonte, el
+                pueblo dibujándose a lo lejos y la naturaleza envolviéndolo todo en una calma
+                absoluta.Aquí, cada atardecer es un espectáculo. El cielo se tiñe de tonos dorados, las copas se alzan
+                para brindar y el tiempo parece detenerse. Porque en La Tertulia, las vistas no son solo el telón de
+                fondo, son parte de la <em>experiencia</em>.
+              </p>
+            </div>
+          </div>
+
+          <picture class="information-picture">
+            <source srcset="./assets/img/vistas_02.webp" type="image/webp">
+            <img src="./assets/img/vistas.jpg" alt="imagen-vistas" class="derecha-imagen" width="387" height="688" loading="lazy">
+          </picture>
+
+        </article>
+      </div>
+    </section>
+
+    <!-- sección de imagenes grid -->
+
+    <div class="imagenes-grid">
+      <div class="imagenes imagenes1"></div>
+      <div class="imagenes imagenes2"></div>
+      <div class="imagenes imagenes3"></div>
+      <div class="imagenes imagenes4"></div>
+      <div class="imagenes imagenes5"></div>
+    </div>
+
+    <!-- sección marquesinas -->
+    <div class="section-marquesina">
+      <div class="marquesina">
+        <div class="marquesina-span">descubre nuestros vinos</div>
+        <div class="marquesina-span">descubre nuestros vinos</div>
+        <div class="marquesina-span">descubre nuestros vinos</div>
+        <div class="marquesina-span">descubre nuestros vinos</div>
+        <div class="marquesina-span">descubre nuestros vinos</div>
+        <div class="marquesina-span">descubre nuestros vinos</div>
+        <div class="marquesina-span">descubre nuestros vinos</div>
+      </div>
+
+      <div class="marquesina marquesina--reverse">
+        <div class="marquesina-span">descubre nuestra carta</div>
+        <div class="marquesina-span">descubre nuestra carta</div>
+        <div class="marquesina-span">descubre nuestra carta</div>
+        <div class="marquesina-span">descubre nuestra carta</div>
+        <div class="marquesina-span">descubre nuestra carta</div>
+        <div class="marquesina-span">descubre nuestra carta</div>
+        <div class="marquesina-span">descubre nuestra carta</div>
+      </div>
+    </div>
+  </main>
+
+
+  <custom-footer></custom-footer>
+
+</body>
+
+</html>

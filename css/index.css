@@ -1,0 +1,667 @@
+/* Estructura:
+    - Reset
+    - Hero
+    - Section Information
+    -Grid
+    -Marquesinas
+    -@media 
+    
+*/
+
+:root {
+    /* Tipografía definida por el usuario */
+    font-size: 100%;
+    /* Tipografía por defecto */
+    font-family: system-ui, sans-serif;
+    /* Anclas suaves */
+    scroll-behavior: smooth;
+}
+
+/* (Reset clásico) Reseteamos los margin, paddings y bordes de todas las etiquetas */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/* Reseteamos los before y after */
+*::before,
+*::after {
+    display: block;
+}
+
+/* Evitamos problemas con las imagenes y vídeos */
+img,
+picture,
+video,
+iframe,
+figure,
+canvas {
+    max-width: 100%;
+    display: block;
+    /* width: 100%; */
+    height: initial; 
+    /* Ajustamos el tamaño del objeto imagen dentro de img y video */
+    object-fit: cover;
+    /* Ponemos la posicion del objeto imagen dentro de img y video */
+    object-position: center center;
+} 
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+}
+
+p a {
+    display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li,
+menu,
+summary {
+    list-style-type: none;
+}
+
+ol {
+    counter-reset: revert;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em,
+pre,
+code,
+mark,
+del {
+    font: inherit;
+    text-decoration: none;
+    color: inherit;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+mark {
+    background-color: transparent;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    /* Desactivamos los estilos base */
+    appearance: none;
+}
+
+fieldset {
+    border: none;
+}
+
+::placeholder {
+    color: unset;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+tfoot {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: inherit;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+    min-height: 100vh;
+    line-height: 1.5em;
+    color: inherit;
+    /* Evitamos que el texto se desborde */
+    hyphens: auto;
+    /* La tipografía es más limpia en macOS */
+    -webkit-font-smoothing: antialiased;
+    /* La tipografía es más limpia en macOS */
+    -moz-osx-font-smoothing: grayscale;
+
+    font-family: var(--font-f-primary);
+    
+}
+
+:root{
+    /* tipografias */
+    --font-f-primary :  "popins", regular;
+    --font-f-secondary :  "Luxurious Script", cursive;
+    
+    /* colores */
+    --color-basic-negro: black;
+    --color-basic-white: white;
+    --color-basic-coral: #ff7f50;
+}
+
+/* Datos del hero */
+
+.hero-wrapper{
+    width: 100%;
+    height: 100vh;
+    
+    position: relative;
+}
+
+/* carrousel de fondo */
+.hero-carrousel{
+    width: 100%;
+    min-height: 100vh;
+   
+    background-color: #ff7f50; 
+
+    position: relative;
+
+    overflow: hidden; 
+}
+.carrousel-wrapper{
+    width: 400%;
+   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    animation: desplazamiento 25s ease-in-out infinite;
+   
+}
+.carrousel-img{
+    width: calc(400%/4);
+    /* le damos altura porque con min-height se desborda el texto y con max-heigth disminuye al hacerlo pequeño*/
+    height: 100vh;   
+
+}
+/* animacion carrusel de fondo */
+@keyframes desplazamiento{
+    
+    0%{
+        transform: translateX(0%);
+    }
+
+    20%{
+        transform: translateX(0%);
+    }
+    
+    25%{
+        transform: translateX(-25%);
+    }
+    45%{
+        transform: translateX(-25%);
+    }
+
+    50%{
+        transform: translateX(-50%);
+    }
+    75%{
+        transform: translateX(-50%);
+    }
+
+    80%{
+        transform: translateX(-75%);
+    }
+
+    100%{
+        transform: translateX(-75%);
+    }
+
+}
+
+
+/* Datos de la Informacion del hero */
+.hero-info{
+    width: 44%;
+    max-width: 100%;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+
+    color: var(--color-basic-white);
+
+
+    animation: scale 1s ease 1; 
+
+    overflow: hidden;
+}
+
+/* animation hero - info */
+@keyframes scale{
+    0%{
+        transform: translateY(100%);
+        opacity:0;
+    }
+
+    100%{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+.hero-p{
+    font-size: 1.3rem;  
+}
+.hero-botones{
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.hero-order{
+    
+    background-color: var(--color-basic-white);
+    font-weight: 500;
+    color: var(--color-basic-coral);
+    
+    padding: 10px 20px;
+    border-radius: 20px;
+    
+}
+.hero-order:hover{
+    background-color: var(--color-basic-coral);
+    color:white
+}
+
+
+/* En esta parte realizamos la sección de information */
+
+.information-wrapper{
+    width: 90%;
+    
+    margin: 2rem auto;
+
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5rem;
+
+    position: relative; /* position del lightbox*/
+
+    overflow: clip;  /*para evitar desbordamiento por el animation y para que funcione el position sticky de la etiqueta informatio-position*/
+}
+.information-article{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+}
+.information-article--reverse{
+    flex-flow:row-reverse nowrap; 
+}
+.information-info{
+    width: 50%;
+    
+}
+.information-position{
+    position: sticky; 
+    top: 18%;
+
+    opacity: 0;
+       
+}
+.information-position.isVisible{
+    opacity: 1;
+
+    animation: desplazamientoizq 3s ease;  
+    
+}
+.information-position--reverse.isVisible{
+    opacity:1;
+    animation: desplazamientodcha 3s ease;  
+}
+.information-h3{
+    margin: 0 0 1rem 0;
+    padding: .7rem 0 0 .2rem; /* padding para que no se corte la tipografia */
+    font-family: var(--font-f-secondary);
+    color: var(--color-basic-coral);
+    font-size: 3rem;    
+}
+
+/* Datos de las imagenes de sección información */
+
+.information-picture{
+    width: 50%;
+    margin: auto; 
+
+    opacity: 0;
+
+} 
+.information-picture.isVisible{
+    opacity: 1;
+    animation: desplazamientodcha 3s ease;
+
+}
+.information-picture--reverse.isVisible{
+    opacity: 1;
+    animation: desplazamientoizq 3s ease; 
+}
+/* animacion etiqueta position e imagenes del wrapper */
+@keyframes desplazamientodcha{
+    from{
+        transform: translateX(100%);
+        opacity:0;
+    }
+
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+@keyframes desplazamientoizq{
+    from{
+        transform: translateX(-100%);
+        opacity:0;
+    }
+
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+} 
+
+/* En esta parte realizamos el estilo del grid de imagenes */
+.imagenes-grid{
+    width: 90%;
+    min-height: 30vh;
+
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 20vh; 
+    gap: 1rem;  
+}
+.imagenes1{
+    grid-row: span 2;
+    background: url(../assets/img/grid1.jpg);
+        background-position: center;
+        background-size: cover;
+}
+.imagenes2{
+    grid-row: span 4;
+    background: url(../assets/img/copas_04.webp);
+        background-position: center;
+        background-size: cover;
+}
+.imagenes3{
+    grid-row: span 2;
+    background: url(../assets/img/platos_02.webp);
+        background-position:center ;
+        background-size: cover;
+        background-repeat: no-repeat;
+}
+.imagenes4{
+    grid-row: span 2;
+    background: url(../assets/img/carne_02.jpg);
+        background-position:center ;
+        background-size: cover;
+
+}
+.imagenes5{
+    grid-row: span 2;
+    background-image: url(../assets/img/croquetas.jpg);
+        background-position:center ;
+        background-size: cover;
+}
+.imagenes{
+    filter: grayscale(100%);
+}
+.imagenes:hover{
+    filter: grayscale(0);
+    transition: 0.5s ease;
+}
+
+/* En esta parte se encuentra el sección de las marquesinas */
+
+.section-marquesina{
+    width: 100%;
+    overflow: hidden;
+
+    position: relative;
+   
+   
+}
+.marquesina{
+    width: 700%;
+
+    margin: 5rem 0 ; 
+
+    display: grid;
+    grid-template-columns: repeat(7 , 1fr);
+   
+
+    animation: marquesina 40s linear infinite both; 
+}
+.marquesina-span{
+    font-size: 9vw;  /* medida en vw para que coja todo el ancho de la pantalla*/
+    font-family: var(--font-f-primary);
+    font-variant: small-caps;
+    
+
+    color: var(--color-basic-coral);
+}
+.marquesina--reverse{
+
+    margin: 11rem 0 ;
+    
+    animation: marquesinareverse 45s linear infinite both;
+}
+/* animations de las marquesinas */
+@keyframes marquesina{
+    from{
+        transform: translateX(0%);
+    }
+
+    to{
+        transform: translateX(-75%);
+    }
+}
+@keyframes marquesinareverse{
+    from{
+        transform: translateX(-75%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+/* Fin de los datos de las marquesinas */
+
+
+/* responsive para tablets */
+@media(max-width:768px){
+
+    /* Datos del hero */
+   
+    .hero-info{
+        width: 90%;
+        top: calc(100%/2);
+       
+    }
+    .hero-order{
+        padding: 15px 15px;
+        border-radius: 10px;
+    }
+    
+    /* Datos de sección información */
+    .position{
+        position:initial;
+    }
+
+    /* Datos imagenes-grid */
+   .imagenes-grid{
+        grid-template-columns:1fr;
+        grid-auto-rows: 40vh; 
+   }
+   .imagenes{
+    grid-row: span 1;
+    
+    filter: grayscale(0);
+    
+   }
+
+  
+}
+
+/* responsive para moviles */
+@media (max-width:650px){
+    .marquesina-span{
+       font-size: 9vw;
+   }
+}
+
+@media (max-width:550px){
+
+    /* Datos del hero */
+
+    .hero-info{
+        width: 100%;
+                
+        padding: 2rem;
+
+        align-items: center;
+        
+        top: calc(40%/2);
+        left: auto;      
+    }
+
+    .hero-p{
+        font-size: 1.3rem;
+
+        text-align: center;
+    }
+
+    .hero-order{
+        padding: 15px 15px;
+        border-radius: 10px;
+    }
+
+    /* datos de la sección de información */
+
+    .information-wrapper{
+        padding: 1rem;
+        gap:2rem;
+    }
+
+    .information-article{
+        flex-flow: column nowrap;
+        justify-content: center;
+    } 
+
+    .information-info{
+        width: 100%;
+    }
+
+    /* datos de las imagenes de la sección información */
+    .information-picture{
+        width: 100%;
+    }
+
+    .information-picture--reverse.isVisible{
+        opacity: 1;
+        animation: desplazamientodcha 3s ease; 
+    }
+
+    .information-position--reverse.isVisible{
+        opacity:1;
+        animation: desplazamientoizq 3s ease;  
+    }
+
+    /* Datos de las imagenes grid */
+    .imagenes-grid{
+        width: 80%;
+    }
+
+    .imagenes{
+        filter: grayscale(0);
+    }
+    
+    /* Datos de las marquesinas */
+    .marquesina{
+        min-width: 1085%;
+        
+        margin: 0;
+    }
+    .marquesina-span{
+        font-size: 14vw;
+    }
+
+    .marquesina--reverse{
+        margin: 5rem 0;
+    }
+
+}
+
+ /* Responsive para movil en horizontal */
+
+    @media ( max-height:480px){
+
+        .hero-info{
+            width: 90%;
+
+            bottom:7% ;
+        }
+
+        .hero-p{
+            font-size: 1rem;
+        }
+
+        
+    }
+

@@ -1,0 +1,114 @@
+<!-- Descripción: Este archivo HTML contiene el formulario de reserva del sitio web.
+    Estructura:
+    - Encabezado (web components)
+    - Contenido principal del formulario
+    -Footer (web components) 
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA TERTULIA | Restaurante</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luxurious+Script&display=swap"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reserva.css">
+    <link rel="stylesheet" href="./css/custom-components.css">
+   
+    
+    <script src="./js/custom-components.js" defer></script>
+</head>
+
+<body>
+
+    <!-- header -->
+
+    <custom-header></custom-header>
+
+    <main class="main">
+       <!-- contenido principal -->
+        <section class="reserva">
+            <!-- En este div contiene todos los datos -->
+            <div class="reserva-wrapper">
+
+                <!-- Información previa al cuestionario-->
+
+                <div class="reserva-aviso">
+                    <h2 class="reserva-h2">Petición de Reserva</h2>
+                    <p class="reserva-p"> Tras realizar la petición de reserva deberá recibir un correo, revise su
+                        bandeja de spam y si no lo recibe o tiene dudas, puede contactarnos telefónicamente.</p>
+                </div>
+                <!-- Datos a rellenar del cuestionario -->
+                <div class="reserva-detalles">
+                    <!-- Datos de/los comensales -->
+
+                    <form class="datos-reserva" method="get">
+                        <!-- Nombre -->
+                        <div class="detalles-datos">
+                            <h4 class="datos-h4">Nombre</h4>
+                            <input type="text" class="datos-input" name="name" placeholder="Introduce aquí tu nombre">
+                        </div>
+                        <!-- email -->
+                        <div class="detalles-datos">
+                            <h4 class="datos-h4">E-mail*</h4>
+                            <input type="text" class="datos-input" name="mail" placeholder="Introduce aquí tu email">
+                        </div>
+                        <!-- telefono -->
+                        <div class="detalles-datos">
+                            <h4 class="datos-h4">Teléfono*</h4>
+                            <input type="text" class="datos-input" name="mail"
+                                placeholder="Telefono con el código del pais si no es España">
+                        </div>
+                        <!-- Fecha de reserva -->
+                        <div class="detalles-datos">
+                            <h4 class="datos-h4"> Fecha*</h4>
+
+                            <input type="date" class="datos-input" name="fecha">
+
+                        </div>
+                        <!-- Hora de reserva -->
+                        <div class="detalles-datos">
+                            <h4 class="datos-h4">Hora</h4>
+                            <input type="time" class="datos-input" name="time">
+                        </div>
+                        <!-- Nº de personas que acudirán -->
+                        <div class="detalles-datos">
+                            <h4 class="datos-h4">Nº de personas</h4>
+                            <input type="number" class="datos-input" name="number"
+                                placeholder="¿Cuántas personas vais a ser?">
+                        </div>
+                        <!-- Información importante de los comensales -->
+                        <div class="detalles-datos">
+                            <h4 class="datos-h4">Mensaje</h4>
+                            <input type="text" class="datos-input" name="alergias" maxlength="120"
+                                placeholder="¿Tienes alguna intolerancia o alergia a alimentos?">
+                        </div>
+                    </form>
+                </div>
+                <!-- Botón de envio -->
+                <button class="reserva-button" title="Enviar la reserva">Reservar</button>
+            </div>
+
+           
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+
+
+
+
+</body>
+
+</html>

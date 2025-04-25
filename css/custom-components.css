@@ -1,0 +1,432 @@
+/* Estructura:
+    - Reset
+    - Header
+    - @media del header
+    - Footer
+    -@media del footer
+    
+*/
+:root {
+    /* Tipografía definida por el usuario */
+    font-size: 100%;
+    /* Tipografía por defecto */
+    font-family: system-ui, sans-serif;
+    /* Anclas suaves */
+    scroll-behavior: smooth;
+}
+
+/* (Reset clásico) Reseteamos los margin, paddings y bordes de todas las etiquetas */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/* Reseteamos los before y after */
+*::before,
+*::after {
+    display: block;
+}
+
+/* Evitamos problemas con las imagenes y vídeos */
+img,
+picture,
+video,
+iframe,
+figure,
+canvas {
+    max-width: 100%;
+    display: block;
+    /* width: 100%; */
+    height: initial; 
+    /* Ajustamos el tamaño del objeto imagen dentro de img y video */
+    object-fit: cover;
+    /* Ponemos la posicion del objeto imagen dentro de img y video */
+    object-position: center center;
+} 
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font: inherit;
+}
+
+p a {
+    display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li,
+menu,
+summary {
+    list-style-type: none;
+}
+
+ol {
+    counter-reset: revert;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em,
+pre,
+code,
+mark,
+del {
+    font: inherit;
+    text-decoration: none;
+    color: inherit;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+mark {
+    background-color: transparent;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+    font: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    /* Desactivamos los estilos base */
+    appearance: none;
+}
+
+fieldset {
+    border: none;
+}
+
+::placeholder {
+    color: unset;
+}
+
+button,
+label {
+    cursor: pointer;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+tfoot {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: inherit;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+    min-height: 100vh;
+    line-height: 1.5em;
+    color: inherit;
+    /* Evitamos que el texto se desborde */
+    hyphens: auto;
+    /* La tipografía es más limpia en macOS */
+    -webkit-font-smoothing: antialiased;
+    /* La tipografía es más limpia en macOS */
+    -moz-osx-font-smoothing: grayscale;
+
+    font-family: var(--font-f-primary);
+}
+
+
+:root{
+    /* tipografias */
+    --font-f-primary :  "Inter", sans-serif;
+    --font-f-secondary :  "Luxurious Script", cursive;
+    
+    /* colores */
+    --color-basic-negro: black;
+    --color-basic-white: white;
+    --color-basic-coral: #ff7f50;
+}
+
+
+
+/* Header*/
+.header {
+
+    width: 100%;
+    min-height: 11vh;
+    background-color: var(--color-basic-white);
+    padding: 2rem 3rem;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    
+    z-index: 1;
+}
+
+.header-h1{
+    width: 50%;
+}
+.header-button {
+
+    display: none;
+
+    position: relative;
+
+}
+
+.header-span{
+    transition: all 0.3s ease;
+}
+
+.header-span--cerrar{
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    opacity: 0;
+
+}
+
+.header-button.isOpen .header-span--menu{
+    opacity: 0;
+}
+
+.header-button.isOpen .header-span--cerrar{
+    opacity: 1;
+}
+
+.header-ul{
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-li:hover{
+    font-family: var(--font-f-secondary);
+    font-size: 2rem;
+    color: var(--color-basic-coral);
+}
+
+.header-li.isActive.header-li:hover{
+    font-family: var(--font-f-primary);
+    font-size: 1rem;
+    color: var(--color-basic-negro)
+}
+
+.header-svg{
+    background-color:var(--color-basic-white);
+}
+
+
+/* header responsive */
+
+@media (max-width: 700px){
+
+    .header{
+        padding: 2rem 3rem 0 ;
+    }
+    .header-button{
+        display: block;
+    }
+
+    .header-nav{
+        width:100%;
+        margin: 1rem auto;
+        background-color: var(--color-basic-coral);
+
+        animation: navdown 5s ease 1;
+
+    }
+
+    .header-ul{
+       flex-flow: column;
+       justify-content: center;
+
+       height: 0;
+       overflow: hidden;       
+    }
+
+    .header-ul.isActive{
+        height: 88vh;
+    }
+
+    .header-li{
+        font-size: 1.5rem;
+    }
+    .header-li:hover{
+        font-size: 1.5rem;
+        font-family: var(--font-f-primary);
+        color: var(--color-basic-white);
+
+
+    }
+}
+
+@media (max-width: 500px){
+    .header{
+        padding: 2rem 2rem 0;
+    }
+}
+
+/* header animation */
+
+@keyframes navdown{
+    from{
+        transform: translateY(-5%);
+        opacity:0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+
+/* footer */
+
+.footer-section{
+
+    background-color: var(--color-basic-coral);
+
+    display: flex;
+
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-content: center;
+    gap: 1rem;
+}
+
+.footer-wrapper{
+    padding: 2rem 3rem;
+
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    align-items: start;
+    gap: 1rem;
+}
+
+
+.footer-h4{
+    font-size: 1rem;
+    font-family: var(--font-f-primary);
+    font-weight: bold;
+
+}
+
+.footer-datos{
+    font-size: 1rem;
+    font-family: var(--font-f-primary);
+
+    display:flex;
+    flex-flow: row;
+}
+
+.footer-privacidad{
+    background-color:var(--color-basic-negro);
+    padding: 0.3rem;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: .7rem;
+    color: var(--color-basic-white);
+}
+
+.footer-privacidad:hover{
+    color: var(--color-basic-coral);
+}
+
+.footer-li{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.footer-li:hover{
+    color:var(--color-basic-white);
+}
+
+.footer-icon{
+    margin: .3rem 0 0 0 ;
+}
+
+/* footer responsive para tablets */
+
+@media (max-width:768px){
+    .footer-datos{
+        font-size:.7rem ;
+       }
+    
+       .footer-h4{
+        font-size: .8em;
+       }
+}
+
+
+/* footer responsive para moviles */
+@media (max-width:601px){
+
+    .footer-wrapper{
+        flex-flow: column nowrap;
+        padding: 2rem 2rem;  
+    }
+    .footer-info{
+        width: 80%;
+        
+    }
+
+    .footer-li{
+        justify-content: start;
+    }
+}

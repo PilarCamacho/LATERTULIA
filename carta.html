@@ -1,0 +1,273 @@
+<!-- Descripción: Este archivo HTML contiene la carta del sitio web.
+    Estructura:
+    - Encabezado (web components)
+    - Contenido principal
+    -Footer (web components) 
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA TERTULIA | Restaurante</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Luxurious+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/carta.css">
+    <link rel="stylesheet" href="./css/custom-components.css">
+    
+    <script defer src="./js/custom-components.js"></script>
+    <script defer src="./js/carta.js"></script>
+
+</head>
+
+<body>
+    <!-- Aqui tenemos el header -->
+    <custom-header></custom-header>
+
+    <!-- contenido de la página -->
+    <main>
+
+        <section class="container">
+            <!-- Parte de arriba de la carta:
+             encontraremos el segundo titulo, y los botones se cada sección-->
+            <div class="container-selector">
+                <h2 class="container-h2">Descubre nuestra <strong>Carta y Vinos</strong></h2>
+                <ul class="container-ul">
+                    <!-- boton sección carta del menú-->
+                    <li class="container-li"><button class="container-button isActive">Carta</button></li>
+                    <!-- boton sección vinos -->
+                    <li class="container-li"><button class="container-button">Vinos</button></li>
+                </ul>
+
+                <!-- En este container se recoge toda la información de la carta -->
+                <div class="container-info">
+
+                    <!-- Información sección carta del menú:
+                        Está dividida a su vez en cuatro articulos que diferencian las variedades de la carta-->
+                    <section class="container-carta container-carta--menu isActive">
+                        <!-- Cada articulo contiene:
+                                - un div que recoge todo el contenido (container-menu)
+                                - un h3 con el titulo de cada variedad
+                                - un div que recoge todos el contenido de los platos (container-contents) -->
+
+                        <article class="container-contain Entrantes">
+                            <div class="container-menu">
+                                <h3 class="container-h3">Entrantes</h3>
+
+                                <div class="container-contents">
+                                    <div class="container-plato">
+
+                                    <!-- En container-plato contiene:
+                                            -Un div con Los nombres del plato
+                                            -un span con los precios -->
+
+                                        <div class="container-name">Tabla de Quesos Manchegos</div>
+                                        <span class="container-precio">8€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Huevos trufados y foie gras con PX</div>
+                                        <span class="container-precio">10€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Ensalada de temporada con ahumados</div>
+                                        <span class="container-precio">12€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Queso frito con miel y mermelada</div>
+                                        <span class="container-precio">9€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Croquetas de jamon</div>
+                                        <span class="container-precio">10€</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </article>
+
+                        <article class="container-contain Carnes">
+                            <div class="container-menu">
+                                <h3 class="container-h3">Carnes</h3>
+                                <div class="container-contents">
+                                    <div class="container-plato">
+                                        <div class="container-name">Chuletillas de cordero de lechal</div>
+                                        <span class="container-precio">25€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Solomillo de ternera con salsa trufada</div>
+                                        <span class="container-precio">27€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Entrecot</div>
+                                        <span class="container-precio">29€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="container-contain Pescados">
+                            <div class="container-menu">
+                                <h3 class="container-h3">Entrantes</h3>
+                                <div class="container-contents">
+                                    <div class="container-plato">
+                                        <div class="container-name">Lomo de bacalao confitado en AOVE</div>
+                                        <span class="container-precio">23€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">brocheta de pez mantequilla</div>
+                                        <span class="container-precio">20€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Rodaballo al horno</div>
+                                        <span class="container-precio">22€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="container-contain Postres">
+                            <div class="container-menu">
+                                <h3 class="container-h3">Postres</h3>
+                                <div class="container-contents">
+                                    <div class="container-plato">
+                                        <div class="container-name">Tarta de Queso</div>
+                                        <span class="container-precio">6€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Mouse de limón</div>
+                                        <span class="container-precio">6€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Miguelitos</div>
+                                        <span class="container-precio">5€</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </article>
+                    </section>
+
+                    <!-- Información sección carta de Vinos:
+                        Está dividida a su vez en cuatro articulos que diferencian las variedades de vinos-->
+                    <section class="container-carta container-carta--vinos">
+                        <!--  Cada articulo contiene:
+                                - un div que recoge todo el contenido
+                                - un h3 con el titulo de cada variedad
+                                - un div que recoge todos el contenido
+                            (al ser la misma estructura que la otra sección se mantienen los nombres)--> 
+
+                        <article class="container-contain container-contain--blancos">
+                            <div class="container-menu">
+                                <h3 class="container-h3">Vinos Blancos</h3>
+                                <div class="container-contents">
+                                    <div class="container-plato">
+                                        <!-- En container-plato contiene:
+                                                -Un div con Los nombres de los vinos
+                                                -un span con los precios -->
+
+                                        <div class="container-name">Infinitus Macabeo</div>
+                                        <span class="container-precio">2€ | 11€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Alto blanco Verdejo</div>
+                                        <span class="container-precio">2€ | 10€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Verloncho</div>
+                                        <span class="container-precio">3€ | 12€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="container-contain container-contain--rosados">
+                            <div class="container-menu">
+                                <h3 class="container-h3">Vinos Rosados</h3>
+                                <div class="container-contents">
+                                    <div class="container-plato">
+                                        <div class="container-name">Latúe tempranillo</div>
+                                        <span class="container-precio">3€ | 14€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Clavelito Frizzante</div>
+                                        <span class="container-precio">3€ | 10€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="container-contain container-contain--tintos">
+                            <div class="container-menu">
+                                <h3 class="container-h3">Vinos Tintos</h3>
+                                <div class="container-contents">
+                                    <div class="container-plato">
+                                        <div class="container-name">Entremontes Crianza</div>
+                                        <span class="container-precio">2€ | 10€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Finca Antigua Syrah Crianza</div>
+                                        <span class="container-precio">3€ | 15€</span>
+                                    </div>
+
+                                    <div class="container-plato">
+                                        <div class="container-name">Garagewine Garnacha tintorera </div>
+                                        <span class="container-precio">3€ | 17€ </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="container-contain container-contain--cavas">
+                            <div class="container-menu">
+                                    <h3 class="container-h3">Cavas</h3>
+                                    <div class="container-contents">
+                                        <div class="container-plato">
+                                            <div class="container-name">Natura Brut</div>
+                                            <span class="container-precio">3€ | 15€</span>
+                                        </div>
+        
+                                        <div class="container-plato">
+                                            <div class="container-name">Espumoso cueva</div>
+                                            <span class="container-precio">3€ | 17€</span>
+                                        </div>
+                                    </div>
+                            </div>
+
+                        </article>
+
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+</body>
+
+</html>
